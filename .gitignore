@@ -23,3 +23,4 @@ go.work
 *.yaml
 .vscode
 .air.toml
+tmp
