@@ -10,14 +10,14 @@ import (
 )
 
 // Custom HTTP configuration
-func RunServer(router *echo.Echo) {
+func RunServer(app *echo.Echo) {
 
 	s := &http2.Server{
 		MaxConcurrentStreams: 250,
 		MaxReadFrameSize:     1048576,
 		IdleTimeout:          10 * time.Second,
 	}
-	if err := router.StartH2CServer(":8080", s); err != http.ErrServerClosed {
+	if err := app.StartH2CServer(":8080", s); err != http.ErrServerClosed {
 		log.Fatal(err)
 	}
 }
