@@ -242,17 +242,17 @@ var tunaWizard = {
                 return;
             }
 
-            var hobbyInput = $(this).find("select[name='corn_color']");
+            var color = $(this).find("select[name='corn_color']");
             
-            if (hobbyInput.find("option:selected").length === 0) {
+            if (color.find("option:selected").length === 0) {
                 //add class to parent element, because this is bootstrap-select.
-                hobbyInput.parents(".bootstrap-select").addClass("confirm-input-error").focus();
-                hobbyInput.selectpicker('toggle');
+                color.parents(".bootstrap-select").addClass("confirm-input-error").focus();
+                color.selectpicker('toggle');
                 return;
             }
 
-            var quantityInput = $(this).find("select[name='quantity']");
-            if (quantityInput.val() === "") {
+            var quantityInput = $(this).find("input[name='quantity']");
+            if (quantityInput.val().trim() === "") {
                 quantityInput.addClass("confirm-input-error").focus();
                 return;
             }
